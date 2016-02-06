@@ -1,0 +1,9 @@
+<menu id="MainMenu">
+    <menu-item id="menu_letters">@Strings.str_letters</menu-item>
+    <menu-item id="menu_numbers">@Strings.str_numbers</menu-item>
+    <menu-item id="menu_symbols">@Strings.str_symbols</menu-item>
+    <menu-item id="menu_prosigns">@Strings.str_prosigns</menu-item>
+    <menu-item id="menu_phrases">@Strings.str_phrases</menu-item>
+    <menu-item id="menu_qcodes">@Strings.str_qcodes</menu-item>
+    <menu-item id="menu_notes">@Strings.str_notes</menu-item>
+</menu>

@@ -1,0 +1,115 @@
+<strings>
+    <string id="AppName">MorseCode</string>
+
+    <string id="prompt">– – • • – –</string>
+
+    <string id="str_letters">Letters</string>
+    <string id="str_numbers">Numbers</string>
+    <string id="str_symbols">Symbols</string>
+    <string id="str_prosigns">Prosigns</string>
+    <string id="str_phrases">Phrases</string>
+    <string id="str_qcodes">Q Codes</string>
+    <string id="str_notes">Notes</string>
+    
+    
+    <string id="morse_A">• –</string>
+    <string id="morse_B">– • • •</string>
+    <string id="morse_C">– • – •</string>
+    <string id="morse_D">– • •</string>
+    <string id="morse_E">•</string>
+    <string id="morse_F">• • – •</string>
+    <string id="morse_G">– – •</string>
+    <string id="morse_H">• • • •</string>
+    <string id="morse_I">• •</string>
+    <string id="morse_J">• – – –</string>
+    <string id="morse_K">– • –</string>
+    <string id="morse_L">• – • •</string>
+    <string id="morse_M">– –</string>
+    <string id="morse_N">– •</string>
+    <string id="morse_O">– – –</string>
+    <string id="morse_P">• – – •</string>
+    <string id="morse_Q">– – • –</string>
+    <string id="morse_R">• – •</string>
+    <string id="morse_S">• • •</string>
+    <string id="morse_T">–</string>
+    <string id="morse_U">• • –</string>
+    <string id="morse_V">• • • –</string>
+    <string id="morse_W">• – –</string>
+    <string id="morse_X">– • • –</string>
+    <string id="morse_Y">– • – –</string>
+    <string id="morse_Z">– – • •</string>
+    
+    <string id="morse_1">• – – – –</string>
+    <string id="morse_2">• • – – –</string>
+    <string id="morse_3">• • • – –</string>
+    <string id="morse_4">• • • • –</string>
+    <string id="morse_5">• • • • •</string>
+    <string id="morse_6">– • • • •</string>
+    <string id="morse_7">– – • • •</string>
+    <string id="morse_8">– – – • •</string>
+    <string id="morse_9">– – – – •</string>
+    <string id="morse_0">– – – – </string>
+    
+    <string id="morse_fs">• – • – • – </string>
+    <string id="morse_cm">– – • • – –</string>
+    <string id="morse_cl">– – – • • •</string>
+    <string id="morse_qs">• • – – • •</string>
+    <string id="morse_ap">• – – – – •</string>
+    <string id="morse_hy">– • • • • –</string>
+    <string id="morse_sl">– • • – •</string>
+    <string id="morse_br">– • – – • –</string>
+    <string id="morse_qt">• – • • – •</string>
+    <string id="morse_at">• – – • – •</string>
+    <string id="morse_eq">– • • • –</string>
+    
+    
+    <string id="ascii_A">A</string>
+    <string id="ascii_B">B</string>
+    <string id="ascii_C">C</string>
+    <string id="ascii_D">D</string>
+    <string id="ascii_E">E</string>
+    <string id="ascii_F">F</string>
+    <string id="ascii_G">G</string>
+    <string id="ascii_H">H</string>
+    <string id="ascii_I">I</string>
+    <string id="ascii_J">J</string>
+    <string id="ascii_K">K</string>
+    <string id="ascii_L">L</string>
+    <string id="ascii_M">M</string>
+    <string id="ascii_N">N</string>
+    <string id="ascii_O">O</string>
+    <string id="ascii_P">P</string>
+    <string id="ascii_Q">Q</string>
+    <string id="ascii_R">R</string>
+    <string id="ascii_S">S</string>
+    <string id="ascii_T">T</string>
+    <string id="ascii_U">U</string>
+    <string id="ascii_V">V</string>
+    <string id="ascii_W">W</string>
+    <string id="ascii_X">X</string>
+    <string id="ascii_Y">Y</string>
+    <string id="ascii_Z">Z</string>
+    
+    <string id="ascii_1">1</string>
+    <string id="ascii_2">2</string>
+    <string id="ascii_3">3</string>
+    <string id="ascii_4">4</string>
+    <string id="ascii_5">5</string>
+    <string id="ascii_6">6</string>
+    <string id="ascii_7">7</string>
+    <string id="ascii_8">8</string>
+    <string id="ascii_9">9</string>
+    <string id="ascii_0">0</string>
+    
+    <string id="ascii_fs">.</string>
+    <string id="ascii_cm">,</string>
+    <string id="ascii_cl">:</string>
+    <string id="ascii_qs">?</string>
+    <string id="ascii_ap">'</string>
+    <string id="ascii_hy">-</string>
+    <string id="ascii_sl">/</string>
+    <string id="ascii_br">()</string>
+    <string id="ascii_qt">"</string>
+    <string id="ascii_at">@</string>
+    <string id="ascii_eq">=</string>
+</strings>
