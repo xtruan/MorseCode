@@ -1,7 +1,7 @@
 <strings>
     <string id="AppName">MorseCode</string>
 
-    <string id="prompt"> </string>
+    <string id="notes">Length of a dot one unit. Length of a dash three units. The space between the parts of one character one unit, between characters three units, and between words seven units. To indicate a mistake and for the receiver to delete the last word, send eight dots.Prosigns are combinations of two letters sent together with no space in between. Other abbreviations and Q codes are sent with normal spacing.</string>
 
     <string id="str_letters">Letters</string>
     <string id="str_numbers">Numbers</string>

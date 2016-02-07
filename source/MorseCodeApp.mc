@@ -21,6 +21,7 @@ class MorseCodeApp extends App.AppBase {
     
     hidden var currentPos = letMin;
     hidden var currentMode = Rez.Strings.str_letters;
+    hidden var isNotesMode = false;
 
     function initialize() {
         AppBase.initialize();
@@ -209,12 +210,16 @@ class MorseCodeApp extends App.AppBase {
         return getAsciiAtPosition(getCurrentPosition());
     }
     
-    function setCurrentMode(newMode) {
+    function getNotesString() {
+        
+    }
+    
+    hidden function setCurrentMode(newMode) {
         currentMode = newMode;
         Sys.println(Ui.loadResource(getCurrentMode()));
     }
     
-    function getCurrentMode() {
+    hidden function getCurrentMode() {
         return currentMode;
     }
     
@@ -238,6 +243,7 @@ class MorseCodeApp extends App.AppBase {
     }
     
     hidden function prepareMorseCodeItem() {
+        setNotesMode(false);
         if (getCurrentMode() == Rez.Strings.str_letters) {
             if (getCurrentPosition() > getLetterMaxPosition()) {
                 setCurrentPosition(getLetterMinPosition());
@@ -275,7 +281,7 @@ class MorseCodeApp extends App.AppBase {
                 setCurrentPosition(getQCodeMaxPosition());
             }
         } else if (getCurrentMode() == Rez.Strings.str_notes) {
-            
+            setNotesMode(true);
         }
         Sys.println(Ui.loadResource(getCurrentAsciiString()));
     }
@@ -286,6 +292,14 @@ class MorseCodeApp extends App.AppBase {
     
     hidden function getCurrentPosition() {
         return currentPos;
+    }
+    
+    hidden function setNotesMode(notesMode) {
+        isNotesMode = notesMode;
+    }
+    
+    hidden function isNotesMode() {
+        return isNotesMode;
     }
     
     hidden function getAsciiAtPosition(pos) {
