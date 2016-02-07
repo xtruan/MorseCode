@@ -12,6 +12,12 @@ class MorseCodeApp extends App.AppBase {
     hidden var letMax = 35;
     hidden var symMin = 36;
     hidden var symMax = 46;
+    hidden var proMin = 47;
+    hidden var proMax = 58;
+    hidden var phsMin = 59;
+    hidden var phsMax = 66;
+    hidden var qcdMin = 67;
+    hidden var qcdMax = 76;
     
     hidden var currentPos = letMin;
     hidden var currentMode = Rez.Strings.str_letters;
@@ -118,6 +124,73 @@ class MorseCodeApp extends App.AppBase {
         asciiDictionary.put(44, Rez.Strings.ascii_qt);
         asciiDictionary.put(45, Rez.Strings.ascii_at);
         asciiDictionary.put(46, Rez.Strings.ascii_eq);
+        // prosigns
+        asciiDictionary.put(47, Rez.Strings.ascii_SOS);
+        asciiDictionary.put(48, Rez.Strings.ascii_AA);
+        asciiDictionary.put(49, Rez.Strings.ascii_AR);
+        asciiDictionary.put(50, Rez.Strings.ascii_AS);
+        asciiDictionary.put(51, Rez.Strings.ascii_BK);
+        asciiDictionary.put(52, Rez.Strings.ascii_BT);
+        asciiDictionary.put(53, Rez.Strings.ascii_CL);
+        asciiDictionary.put(54, Rez.Strings.ascii_CT);
+        asciiDictionary.put(55, Rez.Strings.ascii_DO);
+        asciiDictionary.put(56, Rez.Strings.ascii_KN);
+        asciiDictionary.put(57, Rez.Strings.ascii_SK);
+        asciiDictionary.put(58, Rez.Strings.ascii_SN);
+        //
+        morseDictionary.put(47, Rez.Strings.morse_SOS);
+        morseDictionary.put(48, Rez.Strings.morse_AA);
+        morseDictionary.put(49, Rez.Strings.morse_AR);
+        morseDictionary.put(50, Rez.Strings.morse_AS);
+        morseDictionary.put(51, Rez.Strings.morse_BK);
+        morseDictionary.put(52, Rez.Strings.morse_BT);
+        morseDictionary.put(53, Rez.Strings.morse_CL);
+        morseDictionary.put(54, Rez.Strings.morse_CT);
+        morseDictionary.put(55, Rez.Strings.morse_DO);
+        morseDictionary.put(56, Rez.Strings.morse_KN);
+        morseDictionary.put(57, Rez.Strings.morse_SK);
+        morseDictionary.put(58, Rez.Strings.morse_SN);
+        //phrases
+        morseDictionary.put(59, Rez.Strings.morse_K);
+        morseDictionary.put(60, Rez.Strings.morse_R);
+        morseDictionary.put(61, Rez.Strings.morse_CUL);
+        morseDictionary.put(62, Rez.Strings.morse_BCNU);
+        morseDictionary.put(63, Rez.Strings.morse_UR);
+        morseDictionary.put(64, Rez.Strings.morse_RST);
+        morseDictionary.put(65, Rez.Strings.morse_73);
+        morseDictionary.put(66, Rez.Strings.morse_88);
+        //
+        asciiDictionary.put(59, Rez.Strings.ascii_K);
+        asciiDictionary.put(60, Rez.Strings.ascii_R);
+        asciiDictionary.put(61, Rez.Strings.ascii_CUL);
+        asciiDictionary.put(62, Rez.Strings.ascii_BCNU);
+        asciiDictionary.put(63, Rez.Strings.ascii_UR);
+        asciiDictionary.put(64, Rez.Strings.ascii_RST);
+        asciiDictionary.put(65, Rez.Strings.ascii_73);
+        asciiDictionary.put(66, Rez.Strings.ascii_88);
+        //q codes
+        morseDictionary.put(67, Rez.Strings.morse_QSL);
+        morseDictionary.put(68, Rez.Strings.morse_QSLqs);
+        morseDictionary.put(69, Rez.Strings.morse_QRX);
+        morseDictionary.put(70, Rez.Strings.morse_QRXqs);
+        morseDictionary.put(71, Rez.Strings.morse_QRV);
+        morseDictionary.put(72, Rez.Strings.morse_QRVqs);
+        morseDictionary.put(73, Rez.Strings.morse_QRL);
+        morseDictionary.put(74, Rez.Strings.morse_QRLqs);
+        morseDictionary.put(75, Rez.Strings.morse_QTH);
+        morseDictionary.put(76, Rez.Strings.morse_QTHqs);
+        //
+        asciiDictionary.put(67, Rez.Strings.ascii_QSL);
+        asciiDictionary.put(68, Rez.Strings.ascii_QSLqs);
+        asciiDictionary.put(69, Rez.Strings.ascii_QRX);
+        asciiDictionary.put(70, Rez.Strings.ascii_QRXqs);
+        asciiDictionary.put(71, Rez.Strings.ascii_QRV);
+        asciiDictionary.put(72, Rez.Strings.ascii_QRVqs);
+        asciiDictionary.put(73, Rez.Strings.ascii_QRL);
+        asciiDictionary.put(74, Rez.Strings.ascii_QRLqs);
+        asciiDictionary.put(75, Rez.Strings.ascii_QTH);
+        asciiDictionary.put(76, Rez.Strings.ascii_QTHqs);
+        
     }
 
     //! onStart() is called on application start up
@@ -184,11 +257,23 @@ class MorseCodeApp extends App.AppBase {
                 setCurrentPosition(getSymbolMaxPosition());
             }
         } else if (getCurrentMode() == Rez.Strings.str_prosigns) {
-            
+            if (getCurrentPosition() > getProsignMaxPosition()) {
+                setCurrentPosition(getProsignMinPosition());
+            } else if (getCurrentPosition() < getProsignMinPosition()) {
+                setCurrentPosition(getProsignMaxPosition());
+            }
         } else if (getCurrentMode() == Rez.Strings.str_phrases) {
-            
+            if (getCurrentPosition() > getPhraseMaxPosition()) {
+                setCurrentPosition(getPhraseMinPosition());
+            } else if (getCurrentPosition() < getPhraseMinPosition()) {
+                setCurrentPosition(getPhraseMaxPosition());
+            }
         } else if (getCurrentMode() == Rez.Strings.str_qcodes) {
-            
+            if (getCurrentPosition() > getQCodeMaxPosition()) {
+                setCurrentPosition(getQCodeMinPosition());
+            } else if (getCurrentPosition() < getQCodeMinPosition()) {
+                setCurrentPosition(getQCodeMaxPosition());
+            }
         } else if (getCurrentMode() == Rez.Strings.str_notes) {
             
         }
@@ -233,6 +318,30 @@ class MorseCodeApp extends App.AppBase {
     
     hidden function getSymbolMaxPosition() {
         return symMax;
+    }
+    
+    hidden function getProsignMinPosition() {
+        return proMin;
+    }
+    
+    hidden function getProsignMaxPosition() {
+        return proMax;
+    }
+    
+    hidden function getPhraseMinPosition() {
+        return phsMin;
+    }
+    
+    hidden function getPhraseMaxPosition() {
+        return phsMax;
+    }
+    
+    hidden function getQCodeMinPosition() {
+        return qcdMin;
+    }
+    
+    hidden function getQCodeMaxPosition() {
+        return qcdMax;
     }
 
     //! Return the initial view of your application here

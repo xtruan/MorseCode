@@ -8,6 +8,7 @@ class MorseCodeDelegate extends Ui.BehaviorDelegate {
     }
 
     function onMenu() {
+        // menu
         Ui.pushView(new Rez.Menus.MainMenu(), new MorseCodeMenuDelegate(), Ui.SLIDE_UP);
         return true;
     }
@@ -33,12 +34,11 @@ class MorseCodeDelegate extends Ui.BehaviorDelegate {
         if (key.getKey() == Ui.KEY_ENTER) {
             // do vibe
         } else if (key.getKey() == Ui.KEY_UP) {
+            // menu
+            onMenu();
+        } else if (key.getKey() == Ui.KEY_DOWN) {
             // next
             App.getApp().prepareNextMorseCodeItem();
-            Ui.requestUpdate();
-        } else if (key.getKey() == Ui.KEY_DOWN) {
-            // prev
-            App.getApp().preparePrevMorseCodeItem();
             Ui.requestUpdate();
         }
     }

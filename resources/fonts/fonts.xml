@@ -1,3 +1,3 @@
 <fonts>
-    <font id="MorseFont" filename="morse.fnt" />
+    <font id="MorseFont" filename="morse.fnt" filter="•– " />
 </fonts>

@@ -1,4 +1,0 @@
-<layout id="MainLayout">
-    <label id="AsciiLabel" x="center" y="10" font="Gfx.FONT_LARGE" text="@Strings.prompt" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-    <label id="MorseLabel" x="center" y="center" font="@Fonts.MorseFont" text="@Strings.prompt" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-</layout>
