@@ -1,6 +1,7 @@
 using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
+using Toybox.Attention as Attn;
 
 class MorseCodeApp extends App.AppBase {
 
@@ -15,9 +16,9 @@ class MorseCodeApp extends App.AppBase {
     hidden var proMin = 47;
     hidden var proMax = 58;
     hidden var phsMin = 59;
-    hidden var phsMax = 66;
-    hidden var qcdMin = 67;
-    hidden var qcdMax = 76;
+    hidden var phsMax = 67;
+    hidden var qcdMin = 68;
+    hidden var qcdMax = 77;
     
     hidden var currentPos = letMin;
     hidden var currentMode = Rez.Strings.str_letters;
@@ -160,6 +161,7 @@ class MorseCodeApp extends App.AppBase {
         morseDictionary.put(64, Rez.Strings.morse_RST);
         morseDictionary.put(65, Rez.Strings.morse_73);
         morseDictionary.put(66, Rez.Strings.morse_88);
+        morseDictionary.put(67, Rez.Strings.morse_mis);
         //
         asciiDictionary.put(59, Rez.Strings.ascii_K);
         asciiDictionary.put(60, Rez.Strings.ascii_R);
@@ -169,29 +171,29 @@ class MorseCodeApp extends App.AppBase {
         asciiDictionary.put(64, Rez.Strings.ascii_RST);
         asciiDictionary.put(65, Rez.Strings.ascii_73);
         asciiDictionary.put(66, Rez.Strings.ascii_88);
+        asciiDictionary.put(67, Rez.Strings.ascii_mis);
         //q codes
-        morseDictionary.put(67, Rez.Strings.morse_QSL);
-        morseDictionary.put(68, Rez.Strings.morse_QSLqs);
-        morseDictionary.put(69, Rez.Strings.morse_QRX);
-        morseDictionary.put(70, Rez.Strings.morse_QRXqs);
-        morseDictionary.put(71, Rez.Strings.morse_QRV);
-        morseDictionary.put(72, Rez.Strings.morse_QRVqs);
-        morseDictionary.put(73, Rez.Strings.morse_QRL);
-        morseDictionary.put(74, Rez.Strings.morse_QRLqs);
-        morseDictionary.put(75, Rez.Strings.morse_QTH);
-        morseDictionary.put(76, Rez.Strings.morse_QTHqs);
+        morseDictionary.put(68, Rez.Strings.morse_QSL);
+        morseDictionary.put(69, Rez.Strings.morse_QSLqs);
+        morseDictionary.put(70, Rez.Strings.morse_QRX);
+        morseDictionary.put(71, Rez.Strings.morse_QRXqs);
+        morseDictionary.put(72, Rez.Strings.morse_QRV);
+        morseDictionary.put(73, Rez.Strings.morse_QRVqs);
+        morseDictionary.put(74, Rez.Strings.morse_QRL);
+        morseDictionary.put(75, Rez.Strings.morse_QRLqs);
+        morseDictionary.put(76, Rez.Strings.morse_QTH);
+        morseDictionary.put(77, Rez.Strings.morse_QTHqs);
         //
-        asciiDictionary.put(67, Rez.Strings.ascii_QSL);
-        asciiDictionary.put(68, Rez.Strings.ascii_QSLqs);
-        asciiDictionary.put(69, Rez.Strings.ascii_QRX);
-        asciiDictionary.put(70, Rez.Strings.ascii_QRXqs);
-        asciiDictionary.put(71, Rez.Strings.ascii_QRV);
-        asciiDictionary.put(72, Rez.Strings.ascii_QRVqs);
-        asciiDictionary.put(73, Rez.Strings.ascii_QRL);
-        asciiDictionary.put(74, Rez.Strings.ascii_QRLqs);
-        asciiDictionary.put(75, Rez.Strings.ascii_QTH);
-        asciiDictionary.put(76, Rez.Strings.ascii_QTHqs);
-        
+        asciiDictionary.put(68, Rez.Strings.ascii_QSL);
+        asciiDictionary.put(69, Rez.Strings.ascii_QSLqs);
+        asciiDictionary.put(70, Rez.Strings.ascii_QRX);
+        asciiDictionary.put(71, Rez.Strings.ascii_QRXqs);
+        asciiDictionary.put(72, Rez.Strings.ascii_QRV);
+        asciiDictionary.put(73, Rez.Strings.ascii_QRVqs);
+        asciiDictionary.put(74, Rez.Strings.ascii_QRL);
+        asciiDictionary.put(75, Rez.Strings.ascii_QRLqs);
+        asciiDictionary.put(76, Rez.Strings.ascii_QTH);
+        asciiDictionary.put(77, Rez.Strings.ascii_QTHqs);
     }
 
     //! onStart() is called on application start up
@@ -202,19 +204,45 @@ class MorseCodeApp extends App.AppBase {
     function onStop() {
     }
     
+    function vibeForCurrentMorse() {
+    	if (getIsNotesMode()) {
+    		return;
+    	} else {
+    		var morseStr = Ui.loadResource(getCurrentMorseString());
+    		var vibe = {};
+    		for (var i=0; i<morseStr.length(); i++) {
+    			var char = morseStr.substring(i, i+1);
+    			if (char == ".") {
+    				vibe.put(i, new Attn.VibeProfile( 100, 150 ));
+    			} else if (char == "-") {
+    				vibe.put(i, new Attn.VibeProfile( 100, 450 ));
+    			} else if (char == " ") {
+    				vibe.put(i, new Attn.VibeProfile( 0, 150 ));
+    			} else if (char == "%") {
+    				vibe.put(i, new Attn.VibeProfile( 0, 450 ));
+    			}
+    		}
+	        Attn.vibrate(vibe.values());
+        }
+    }
+    
     function getCurrentMorseString() {
         return getMorseAtPosition(getCurrentPosition());
     }
     
     function getCurrentAsciiString() {
-        return getAsciiAtPosition(getCurrentPosition());
+    	if (getIsNotesMode()) {
+    		return getNotesString();
+    	} else {
+        	return getAsciiAtPosition(getCurrentPosition());
+        }
     }
     
-    function getNotesString() {
-        
+    hidden function getNotesString() {
+        return Rez.Strings.notes;
     }
     
-    hidden function setCurrentMode(newMode) {
+    function setCurrentMode(newMode) {
         currentMode = newMode;
         Sys.println(Ui.loadResource(getCurrentMode()));
     }
@@ -298,7 +326,7 @@ class MorseCodeApp extends App.AppBase {
         isNotesMode = notesMode;
     }
     
-    hidden function isNotesMode() {
+    function getIsNotesMode() {
         return isNotesMode;
     }
     

@@ -15,6 +15,7 @@ class MorseCodeDelegate extends Ui.BehaviorDelegate {
     
     function onTap(tap) {
         // do vibe
+		App.getApp().vibeForCurrentMorse();
     }
     
     function onSwipe(swipe) {
@@ -33,6 +34,7 @@ class MorseCodeDelegate extends Ui.BehaviorDelegate {
         //System.println(key.getKey());
         if (key.getKey() == Ui.KEY_ENTER) {
             // do vibe
+			App.getApp().vibeForCurrentMorse();
         } else if (key.getKey() == Ui.KEY_UP) {
             // menu
             onMenu();
