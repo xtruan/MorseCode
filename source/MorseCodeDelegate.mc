@@ -13,7 +13,7 @@ class MorseCodeDelegate extends Ui.BehaviorDelegate {
         return true;
     }
     
-    function onTap(tap) {
+    function onHold(tap) {
         // do vibe
 		App.getApp().vibeForCurrentMorse();
     }
