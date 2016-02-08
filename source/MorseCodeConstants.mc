@@ -7,8 +7,8 @@ class MorseCodeConstants {
     static var symMin = 36;
     static var symMax = 46;
     static var proMin = 47;
-    static var proMax = 58;
-    static var phsMin = 59;
+    static var proMax = 59;
+    static var phsMin = 60;
     static var phsMax = 67;
     static var qcdMin = 68;
     static var qcdMax = 77;
@@ -78,6 +78,7 @@ class MorseCodeConstants {
     "- . - . . - . .",
     "- . - . -",
     "- . . - - -",
+    ". . . . . . . .",
     "- . - - .",
     ". . . - . -",
     ". . . - .",
@@ -90,7 +91,6 @@ class MorseCodeConstants {
     ". - .   . . .   -",
     "- - . . .%. . . - -",
     "- - - . .%- - - . .",
-    ". . . . . . . .",
     
     "- - . -   . . .%. - . .",
     "- - . -   . . .%. - . .   . . - - . .",
@@ -101,9 +101,7 @@ class MorseCodeConstants {
     "- - . -   . - .%. - . .",
     "- - . -   . - .%. - . .   . . - - . .",
     "- - . -   -%. . . .",
-    "- - . -   -%. . . .   . . - - . .",
-    
-    ""];
+    "- - . -   -%. . . .   . . - - . ."];
     
     static var asciiArray = [
     "1",
@@ -158,13 +156,14 @@ class MorseCodeConstants {
     
     "SOS%Distress message",
     "AA%New line",
-    "AR%End of message",
+    "AR%New page",
     "AS%Wait",
     "BK%Break",
     "BT%New paragraph",
-    "CL%Going off air (clear)",
+    "CL%Going off air (closing)",
     "CT%Start copying",
-    "DO%Chg. to Wabun Code",
+    "DO%Shift to Wabun Code",
+    "HH%Error (delete word)",
     "KN%Spec. station to xmit",
     "SK%End transmission",
     "SN%Understood",
@@ -177,7 +176,6 @@ class MorseCodeConstants {
     "RST%Signal report",
     "73%Best regards",
     "88%Love and kisses",
-    "Mistake%Delete last word",
     
     "QSL%I acknowledge",
     "QSL?%Do you acknowledge?",
@@ -188,9 +186,7 @@ class MorseCodeConstants {
     "QRL%Frequency in use",
     "QRL?%Is frequency in use?",
     "QTH%My location is...",
-    "QTH?%What's your location?",
-    
-    ""];
+    "QTH?%What's your location?"];
       
     static var notes = "Length of a dot = 1 unit\nLength of a dash = 3 units\nSpace b/t parts of a char = 1 unit\nSpace b/t chars = 3 units\nSpace b/t words = 7 units\n8 dots signal delete last word";
     	
