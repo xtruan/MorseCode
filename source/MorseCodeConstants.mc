@@ -5,13 +5,13 @@ class MorseCodeConstants {
     static var letMin = 10;
     static var letMax = 35;
     static var symMin = 36;
-    static var symMax = 46;
-    static var proMin = 47;
-    static var proMax = 59;
-    static var phsMin = 60;
-    static var phsMax = 67;
-    static var qcdMin = 68;
-    static var qcdMax = 77;
+    static var symMax = 47;
+    static var proMin = 48;
+    static var proMax = 60;
+    static var phsMin = 61;
+    static var phsMax = 68;
+    static var qcdMin = 69;
+    static var qcdMax = 78;
     
     static var DOT = ".";
     static var DASH = "-";
@@ -67,6 +67,7 @@ class MorseCodeConstants {
     ". - - - - .",
     "- . . . . -",
     "- . . - .",
+    "- . - - .",
     "- . - - . -",
     ". - . . - .",
     ". - - . - .",
@@ -154,13 +155,14 @@ class MorseCodeConstants {
     ".%Period",
     ",%Comma",
     ":%Colon",
-    "?%Question",
+    "?%Question mark",
     "'%Apostrophe",
     "-%Hyphen",
     "/%Slash",
-    "()%Parentheses",
-    "\"%Quotation",
-    "@%At",
+    "(%Left bracket",
+    ")%Right bracket",
+    "\"%Quotation mark",
+    "@%At symbol",
     "=%Equals",
     
     //// prosigns ////
