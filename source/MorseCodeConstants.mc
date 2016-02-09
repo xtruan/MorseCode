@@ -12,13 +12,13 @@ class MorseCodeConstants {
     static var phsMax = 67;
     static var qcdMin = 68;
     static var qcdMax = 77;
-	
-	static var DOT = ".";
-	static var DASH = "-";
-	static var SPACE = " ";
-	static var SPLIT = "%";
-	
-	static var morseArray = [
+    
+    static var DOT = ".";
+    static var DASH = "-";
+    static var SPACE = " ";
+    static var SPLIT = "%";
+    
+    static var morseArray = [
     ". - - - -",
     ". . - - -",
     ". . . - -",
@@ -189,7 +189,7 @@ class MorseCodeConstants {
     "QTH?%What's your location?"];
       
     static var notes = "Length of a dot = 1 unit\nLength of a dash = 3 units\nSpace b/t parts of a char = 1 unit\nSpace b/t chars = 3 units\nSpace b/t words = 7 units\n8 dots signal delete last word";
-    	
+        
     static var str_letters = "Letters";
     static var str_numbers = "Numbers";
     static var str_symbols = "Symbols";
