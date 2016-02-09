@@ -1,5 +1,5 @@
 <strings>
-    <string id="AppName">MorseCode</string>
+    <string id="AppName">Morse</string>
 
     <string id="str_letters">Letters</string>
     <string id="str_numbers">Numbers</string>
