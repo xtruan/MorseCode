@@ -172,7 +172,7 @@ class MorseCodeConstants {
     "BT%New paragraph",
     "CL%Going off air (closing)",
     "CT%Start copying",
-    "DO%Shift to Wabun Code",
+    "DO/NJ%Shift to Wabun Code",
     "HH%Error (delete word)",
     "KN%Spec. station to xmit",
     "SK%End transmission",
