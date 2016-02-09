@@ -38,7 +38,7 @@ class MorseCodeView extends Ui.View {
             dc.drawText(w/2, h/2, Gfx.FONT_XTINY, notes, Gfx.TEXT_JUSTIFY_CENTER|Gfx.TEXT_JUSTIFY_VCENTER);
         } else {
             var morse = App.getApp().getCurrentMorseString();
-            var seperatorPos = morse.find("%");
+            var seperatorPos = morse.find(MorseCodeConstants.SPLIT);
             if (seperatorPos != null) {
                 var morseText = morse.substring(0, seperatorPos) + "\n" + 
                     morse.substring(seperatorPos+1, morse.length());
@@ -48,7 +48,7 @@ class MorseCodeView extends Ui.View {
             }
             
             var ascii = App.getApp().getCurrentAsciiString();
-            seperatorPos = ascii.find("%");
+            seperatorPos = ascii.find(MorseCodeConstants.SPLIT);
             if (seperatorPos != null) {
                 dc.drawText(w/2, h/20, Gfx.FONT_LARGE, ascii.substring(0, seperatorPos), Gfx.TEXT_JUSTIFY_CENTER);
                 dc.drawText(w/2, 8*h/10, Gfx.FONT_TINY, ascii.substring(seperatorPos+1, ascii.length()), Gfx.TEXT_JUSTIFY_CENTER);
