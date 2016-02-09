@@ -19,6 +19,7 @@ class MorseCodeConstants {
     static var SPLIT = "%";
     
     static var morseArray = [
+    //// numbers ////
     ". - - - -",
     ". . - - -",
     ". . . - -",
@@ -30,6 +31,7 @@ class MorseCodeConstants {
     "- - - - .",
     "- - - - -",
     
+    //// letters ////
     ". -",
     "- . . .",
     "- . - .",
@@ -57,6 +59,7 @@ class MorseCodeConstants {
     "- . - -",
     "- - . .",
     
+    //// symbols ////
     ". - . - . -",
     "- - . . - -",
     "- - - . . .",
@@ -69,6 +72,7 @@ class MorseCodeConstants {
     ". - - . - .",
     "- . . . -",
     
+    //// prosigns ////
     ". . . - - - . . .",
     ". - . -",
     ". - . - .",
@@ -83,6 +87,7 @@ class MorseCodeConstants {
     ". . . - . -",
     ". . . - .",
     
+    //// phrases ////
     "- . -",
     ". - .",
     "- . - .   . . -%. - . .",
@@ -92,6 +97,7 @@ class MorseCodeConstants {
     "- - . . .%. . . - -",
     "- - - . .%- - - . .",
     
+    //// q codes ////
     "- - . -   . . .%. - . .",
     "- - . -   . . .%. - . .   . . - - . .",
     "- - . -   . - .%- . . -",
@@ -104,6 +110,7 @@ class MorseCodeConstants {
     "- - . -   -%. . . .   . . - - . ."];
     
     static var asciiArray = [
+    //// numbers ////
     "1",
     "2",
     "3",
@@ -115,6 +122,7 @@ class MorseCodeConstants {
     "9",
     "0",
     
+    //// letters ////
     "A",
     "B",
     "C",
@@ -125,14 +133,14 @@ class MorseCodeConstants {
     "H",
     "I",
     "J",
-    "K%Over",
+    "K",
     "L",
     "M",
     "N",
     "O",
     "P",
     "Q",
-    "R%Roger",
+    "R",
     "S",
     "T",
     "U",
@@ -142,6 +150,7 @@ class MorseCodeConstants {
     "Y",
     "Z",
     
+    //// symbols ////
     ".%Period",
     ",%Comma",
     ":%Colon",
@@ -153,7 +162,7 @@ class MorseCodeConstants {
     "\"%Quotation",
     "@%At",
     "=%Equals",
-    
+    //// prosigns ////
     "SOS%Distress message",
     "AA%New line",
     "AR%New page",
@@ -168,6 +177,7 @@ class MorseCodeConstants {
     "SK%End transmission",
     "SN%Understood",
     
+    //// phrases ////
     "K%Over",
     "R%Roger",
     "CUL%See you later",
@@ -177,6 +187,7 @@ class MorseCodeConstants {
     "73%Best regards",
     "88%Love and kisses",
     
+    //// q codes ////
     "QSL%I acknowledge",
     "QSL?%Do you acknowledge?",
     "QRX%Wait",

@@ -13,4 +13,5 @@ Usage:
 Make sure vibration is enabled to make the most of this app!
 
 Changelog:
+* 1.1 - Minor fixes
 * 1.0 - Initial release

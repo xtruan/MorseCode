@@ -68,7 +68,8 @@ class MorseCodeApp extends App.AppBase {
     
     function setCurrentMode(newMode) {
         currentMode = newMode;
-        Sys.println(getCurrentMode());
+        // debug - print current category
+        //Sys.println(getCurrentMode());
     }
     
     hidden function getCurrentMode() {
@@ -135,7 +136,8 @@ class MorseCodeApp extends App.AppBase {
         } else if (getCurrentMode() == MorseCodeConstants.str_notes) {
             setNotesMode(true);
         }
-        Sys.println(getCurrentAsciiString());
+        // debug - print currently displayed item
+        //Sys.println(getCurrentAsciiString());
     }
     
     hidden function setCurrentPosition(newPos) {
