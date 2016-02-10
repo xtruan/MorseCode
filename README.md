@@ -13,6 +13,7 @@ Usage:
 Make sure vibration is enabled to make the most of this app!
 
 Changelog:
+* 1.4 - Splitting out left and right bracket symbols and other minor fixes
 * 1.3 - Updating Wabun Code prosign to indicate DO is also NJ (for Next Japanese)
 * 1.1/1.2 - Minor fixes
 * 1.0 - Initial release
