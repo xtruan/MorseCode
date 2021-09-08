@@ -36,7 +36,7 @@ class MorseCodeDelegate extends Ui.BehaviorDelegate {
             // do vibe
             App.getApp().vibeForCurrentMorse();
         } else if (key.getKey() == Ui.KEY_UP) {
-            // menu
+            // prev
             App.getApp().preparePrevMorseCodeItem();
             Ui.requestUpdate();
         } else if (key.getKey() == Ui.KEY_DOWN) {
