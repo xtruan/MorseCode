@@ -51,7 +51,7 @@ class MorseCodeView extends Ui.View {
             seperatorPos = ascii.find(MorseCodeConstants.SPLIT);
             if (seperatorPos != null) {
                 dc.drawText(w/2, h/20, Gfx.FONT_LARGE, ascii.substring(0, seperatorPos), Gfx.TEXT_JUSTIFY_CENTER);
-                dc.drawText(w/2, 8*h/10, Gfx.FONT_TINY, ascii.substring(seperatorPos+1, ascii.length()), Gfx.TEXT_JUSTIFY_CENTER);
+                dc.drawText(w/2, 7*h/10, Gfx.FONT_TINY, ascii.substring(seperatorPos+1, ascii.length()), Gfx.TEXT_JUSTIFY_CENTER);
             } else {
                 dc.drawText(w/2, h/20, Gfx.FONT_LARGE, ascii, Gfx.TEXT_JUSTIFY_CENTER);
             }
