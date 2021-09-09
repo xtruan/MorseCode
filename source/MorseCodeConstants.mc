@@ -202,7 +202,7 @@ class MorseCodeConstants {
     "QTH%My location is...",
     "QTH?%What's your location?"];
       
-    static var notes = "Length of a dot = 1 unit\nLength of a dash = 3 units\nSpace b/t parts of a char = 1 unit\nSpace b/t chars = 3 units\nSpace b/t words = 7 units\n8 dots signal delete last word";
+    static var notes = "Length of a dot = 1\nLength of a dash = 3\n8 dots = delete last word\nSpace b/t parts of a char = 1\nSpace b/t chars = 3\nSpace b/t words = 7";
         
     static var str_letters = "Letters";
     static var str_numbers = "Numbers";
