@@ -5,13 +5,13 @@ class MorseCodeConstants {
     static var letMin = 10;
     static var letMax = 35;
     static var symMin = 36;
-    static var symMax = 47;
-    static var proMin = 48;
-    static var proMax = 60;
-    static var phsMin = 61;
-    static var phsMax = 68;
-    static var qcdMin = 69;
-    static var qcdMax = 78;
+    static var symMax = 53;
+    static var proMin = 54;
+    static var proMax = 66;
+    static var phsMin = 67;
+    static var phsMax = 74;
+    static var qcdMin = 75;
+    static var qcdMax = 84;
     
     static var DOT = ".";
     static var DASH = "-";
@@ -62,15 +62,21 @@ class MorseCodeConstants {
     //// symbols ////
     ". - . - . -",
     "- - . . - -",
-    "- - - . . .",
     ". . - - . .",
+    "- . - . - -",
     ". - - - - .",
     "- . . . . -",
     "- . . - .",
+    "- - - . . .",
+    "- . - . - .",
     "- . - - .",
     "- . - - . -",
+    ". - . . .",
+    ". . - - . -",
     ". - . . - .",
     ". - - . - .",
+    ". . . - . . -",
+    ". - . - .",
     "- . . . -",
     
     //// prosigns ////
@@ -112,58 +118,64 @@ class MorseCodeConstants {
     
     static var asciiArray = [
     //// numbers ////
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "0",
+    "1%One (WUN)",
+    "2%Two (TOO)",
+    "3%Three (TREE)",
+    "4%Four (FOW-ER)",
+    "5%Five (FIFE)",
+    "6%Six (SIX)",
+    "7%Seven (SEV-EN)",
+    "8%Eight (AIT)",
+    "9%Nine (NIN-ER)",
+    "0%Zero (ZEE-RO)",
     
     //// letters ////
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
+    "A%Alfa",
+    "B%Bravo",
+    "C%Charlie",
+    "D%Delta",
+    "E%Echo",
+    "F%Foxtrot",
+    "G%Golf",
+    "H%Hotel",
+    "I%India",
+    "J%Juliett",
+    "K%Kilo",
+    "L%Lima",
+    "M%Mike",
+    "N%November",
+    "O%Oscar",
+    "P%Papa",
+    "Q%Quebec",
+    "R%Romeo",
+    "S%Sierra",
+    "T%Tango",
+    "U%Uniform",
+    "V%Victor",
+    "W%Whiskey",
+    "X%X-ray",
+    "Y%Yankee",
+    "Z%Zulu",
     
     //// symbols ////
-    ".%Period",
+    ".%Full stop (stop)",
     ",%Comma",
-    ":%Colon",
     "?%Question mark",
+    "!%Exclamation mark",
     "'%Apostrophe",
-    "-%Hyphen",
+    "-%Hyphen (minus)",
     "/%Slash",
+    ":%Colon",
+    ";%Semicolon",
     "(%Left bracket",
     ")%Right bracket",
+    "&%Ampersand",
+    "_%Underscore",
     "\"%Quotation mark",
-    "@%At symbol",
-    "=%Equals",
+    "@%At sign",
+    "$%Dollar sign",
+    "+%Plus sign",
+    "=%Equals sign",
     
     //// prosigns ////
     "SOS%Distress message",
