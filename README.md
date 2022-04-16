@@ -13,6 +13,7 @@ Usage:
 Make sure vibration is enabled to make the most of this app!
 
 Changelog:
+* 3.0.5 - Added support for additional devices.
 * 3.0.3 - Added NATO spelling alphabet to letters and numbers. Added a few more symbols.
 * 3.0 - Added support for MANY more devices! Cleaned up layout to work better on more devices.
 * 1.4 - Splitting out left and right bracket symbols and other minor fixes
