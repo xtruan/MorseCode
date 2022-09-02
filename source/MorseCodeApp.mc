@@ -26,27 +26,31 @@ class MorseCodeApp extends App.AppBase {
     }
     
     function vibeForCurrentMorse() {
-        if (getIsNotesMode()) {
-            return;
-        } else {
-            var morseStr = getCurrentMorseString();
-            var vibe = {};
-            for (var i=0; i<morseStr.length(); i++) {
-                var char = morseStr.substring(i, i+1);
-                if (char.equals(MorseCodeConstants.DOT)) {
-                    vibe.put(i, new Attn.VibeProfile( 75, 150 ));
-                } else if (char.equals(MorseCodeConstants.DASH)) {
-                    vibe.put(i, new Attn.VibeProfile( 75, 450 ));
-                } else if (char.equals(MorseCodeConstants.SPACE)) {
-                    vibe.put(i, new Attn.VibeProfile( 0, 150 ));
-                } else if (char.equals(MorseCodeConstants.SPLIT)) {
-                    vibe.put(i, new Attn.VibeProfile( 0, 450 ));
+        if (Attn has :VibeProfile) {
+            if (getIsNotesMode()) {
+                return;
+            } else {
+                var morseStr = getCurrentMorseString();
+                var vibe = {};
+                for (var i=0; i<morseStr.length(); i++) {
+                    var char = morseStr.substring(i, i+1);
+                    if (char.equals(MorseCodeConstants.DOT)) {
+                        vibe.put(i, new Attn.VibeProfile( 75, 150 ));
+                    } else if (char.equals(MorseCodeConstants.DASH)) {
+                        vibe.put(i, new Attn.VibeProfile( 75, 450 ));
+                    } else if (char.equals(MorseCodeConstants.SPACE)) {
+                        vibe.put(i, new Attn.VibeProfile( 0, 150 ));
+                    } else if (char.equals(MorseCodeConstants.SPLIT)) {
+                        vibe.put(i, new Attn.VibeProfile( 0, 450 ));
+                    }
+                }
+                // length above 8 causes crash :(
+                if (vibe.values().size() <= 8) {
+                    Attn.vibrate(vibe.values());
                 }
             }
-            // length above 8 causes crash :(
-            if (vibe.values().size() <= 8) {
-                Attn.vibrate(vibe.values());
-            }
+        } else {
+            System.println("Device does not support VibeProfile");
         }
     }
     
