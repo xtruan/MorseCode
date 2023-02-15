@@ -31,22 +31,22 @@ class MorseCodeApp extends App.AppBase {
                 return;
             } else {
                 var morseStr = getCurrentMorseString();
-                var vibe = {};
+                var vibe = [] as Toybox.Lang.Array<Attn.VibeProfile>;
                 for (var i=0; i<morseStr.length(); i++) {
                     var char = morseStr.substring(i, i+1);
                     if (char.equals(MorseCodeConstants.DOT)) {
-                        vibe.put(i, new Attn.VibeProfile( 75, 150 ));
+                        vibe.add(new Attn.VibeProfile( 75, 150 ));
                     } else if (char.equals(MorseCodeConstants.DASH)) {
-                        vibe.put(i, new Attn.VibeProfile( 75, 450 ));
+                        vibe.add(new Attn.VibeProfile( 75, 450 ));
                     } else if (char.equals(MorseCodeConstants.SPACE)) {
-                        vibe.put(i, new Attn.VibeProfile( 0, 150 ));
+                        vibe.add(new Attn.VibeProfile( 0, 150 ));
                     } else if (char.equals(MorseCodeConstants.SPLIT)) {
-                        vibe.put(i, new Attn.VibeProfile( 0, 450 ));
+                        vibe.add(new Attn.VibeProfile( 0, 450 ));
                     }
                 }
                 // length above 8 causes crash :(
-                if (vibe.values().size() <= 8) {
-                    Attn.vibrate(vibe.values());
+                if (vibe.size() <= 8) {
+                    Attn.vibrate(vibe);
                 }
             }
         } else {
