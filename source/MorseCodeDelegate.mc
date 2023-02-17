@@ -1,4 +1,5 @@
 using Toybox.Application as App;
+using Toybox.System as Sys;
 using Toybox.WatchUi as Ui;
 
 class MorseCodeDelegate extends Ui.BehaviorDelegate {
@@ -37,15 +38,21 @@ class MorseCodeDelegate extends Ui.BehaviorDelegate {
         if (key.getKey() == Ui.KEY_ENTER) {
             // do vibe
             App.getApp().vibeForCurrentMorse();
+            return true;
         } else if (key.getKey() == Ui.KEY_UP) {
             // prev
             App.getApp().preparePrevMorseCodeItem();
             Ui.requestUpdate();
+            return true;
         } else if (key.getKey() == Ui.KEY_DOWN) {
             // next
             App.getApp().prepareNextMorseCodeItem();
             Ui.requestUpdate();
+            return true;
+        } else if (key.getKey() == Ui.KEY_ESC) {
+        	Sys.println("Quitting!");
+        	return false;
         }
-        return true;
+        return false;
     }
 }
