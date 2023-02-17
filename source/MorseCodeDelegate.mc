@@ -25,12 +25,14 @@ class MorseCodeDelegate extends Ui.BehaviorDelegate {
             // next
             App.getApp().prepareNextMorseCodeItem();
             Ui.requestUpdate();
+            return true;
         } else if (swipe.getDirection() == Ui.SWIPE_RIGHT) {
             // prev
             App.getApp().preparePrevMorseCodeItem();
             Ui.requestUpdate();
+            return true;
         }
-        return true;
+        return false;
     }
     
     function onKey(key) {
